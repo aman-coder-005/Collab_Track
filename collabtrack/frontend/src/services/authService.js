@@ -8,10 +8,9 @@ const API_URL = '/api/users';
 
 // NEW: Real signup function
 const signup = async (name, email, password) => {
-  // 1. Make the POST request to our backend
-  const response = await axios.post(API_URL, { name, email, password });
-  
-  // 2. Return the data (this won't be used, but it's good practice)
+  // The backend route is likely router.post('/register', ...)
+  // So we must post to /api/users/register
+  const response = await axios.post(`${API_URL}/register`, { name, email, password });
   return response.data;
 };
 
